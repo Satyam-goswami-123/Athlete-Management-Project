@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Athlete India | SportCentral</title>
+  <link rel="stylesheet" href="styles.css" />
+
+ <!-- Firebase App (core) SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+
+<!-- Firebase Auth SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="https://stock.adobe.com/images/run-man-logo/135604480" alt="Logo" class="logo-img">
+      <div class="logo">ATHLETE INDIA</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content-wrapper">
+      <div class="hero-content">
+        <h1>REVOLUTIONIZING THE INDIAN SPORTING INDUSTRY: A CENTRALIZED PLATFORM</h1>
+        <p>The Indian sporting industry has seen significant growth in recent years, with increasing participation and interest in various sports. However, the management of athletes remains fragmented and inefficient.</p>
+        <button id="google-btn" class="btn-orange">Sign in with Google</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>We aim to provide an all-in-one platform to manage athlete data, performance, stats, and streamline communication between coaches and players.</p>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="product-section">
+    <h2>Our Products</h2>
+    <div class="product-cards">
+      <a href="Performance.html" class="product-card">Athlete Performance Tracker</a>
+      <a href="scheduling.html" class="product-card">Scheduling & Training</a>
+      <a href="diet.html" class="product-card">Diet & Nutrition</a>
+      <a href="career-mang.html" class="product-card">Career Management</a>
+      
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <h2 class="section-title">Features</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Live Statistics</h3>
+        <p>Track performance in real-time.</p>
+        <a href="EventSched,Cal.html" class="feature-link">Explore →</a>
+      </div>
+      <div class="feature-box">
+        <i class="fa-solid fa-user"></i>
+        <h3>Player Profiles</h3>
+        <p>Maintain athlete history and achievements.</p>
+        <a href="EventSched,Cal.html" class="feature-link">Explore →</a>
+      </div>
+      <div class="feature-box">
+        <i class="fa-solid fa-kit-medical"></i>
+        <h3>Injury Management</h3>
+        <p>Stay on top of athlete health.</p>
+        <a href="EventSched,Cal.html" class="feature-link">Explore →</a>
+      </div>
+      <div class="feature-box">
+        <i class="fa-solid fa-database"></i>
+        <h3>Centralized Data</h3>
+        <p>All important data in one place.</p>
+        <a href="EventSched,Cal.html" class="feature-link">Explore →</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Contact -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Feel free to contact!</h2>
+        <p>To help you contact the right department for your query we’ve put it all in one central place for you</p>
+        <iframe src="https://www.google.com/maps/embed?...your_map_code..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="contact-form">
+        <h2>Submit To Learn More.</h2>
+        <form>
+          <div class="form-row">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+          </div>
+          <div class="form-row">
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone" required>
+          </div>
+          <textarea placeholder="Message goes here" rows="5" required></textarea>
+          <button type="submit" class="send-btn"><span class="arrow">→</span> <span>Send Message</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>How do I register as an athlete?</summary>
+      <p>Click on the Explore Now button and sign up using your credentials.</p>
+    </details>
+    <details>
+      <summary>Is this platform free?</summary>
+      <p>Yes, basic features are free with options for premium upgrades.</p>
+    </details>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Athlete India. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase Setup Script -->
+  <script type="module">
+    // Import the functions you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+  
+    // Your Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBgxy-Ouc_Jn_ouyosPeATREFnv4nhm5NI",
+  authDomain: "athelet-india.firebaseapp.com",
+  projectId: "athelet-india",
+  storageBucket: "athelet-india.firebasestorage.app",
+  messagingSenderId: "356123250333",
+  appId: "1:356123250333:web:3cbfe4305f950aeec9ce74",
+  measurementId: "G-Z2J5STYY3P"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+  
+    // Login button action
+    document.getElementById("google-btn").addEventListener("click", () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // Redirect to dashboard
+          window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+          alert("Login failed: " + error.message);
+          console.error(error);
+        });
+    });
+  </script>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

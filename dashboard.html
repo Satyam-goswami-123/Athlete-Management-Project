@@ -1,0 +1,32 @@
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+  
+    const firebaseConfig = {
+        apiKey: "AIzaSyBgxy-Ouc_Jn_ouyosPeATREFnv4nhm5NI",
+  authDomain: "athelet-india.firebaseapp.com",
+  projectId: "athelet-india",
+  storageBucket: "athelet-india.firebasestorage.app",
+  messagingSenderId: "356123250333",
+  appId: "1:356123250333:web:3cbfe4305f950aeec9ce74",
+  measurementId: "G-Z2J5STYY3P"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+  
+    document.getElementById("google-btn").addEventListener("click", () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          alert("Welcome " + result.user.displayName);
+          // ✅ Redirect after successful login
+          window.location.href = "Performance.html";  // Make sure this file exists!
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Login failed: " + error.message);
+        });
+    });
+  </script>
+  

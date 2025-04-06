@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrition & Diet Plan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero-section {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      height: 400px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .diet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .diet-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .diet-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .diet-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .diet-card h3 {
+      margin: 15px;
+      color: #003366;
+    }
+
+    .diet-card p {
+      margin: 0 15px 20px 15px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍎 Athlete India - Nutrition & Diet Plan</h1>
+  </header>
+
+  <div class="hero-section">
+    <h1>Fuel Your Performance with Proper Nutrition</h1>
+  </div>
+
+  <div class="section">
+    <h2 style="text-align: center; color: #003366;">Recommended Diet Plans</h2>
+    <div class="diet-grid">
+      <div class="diet-card">
+        <img src="https://media.istockphoto.com/id/861188910/photo/different-types-of-food-on-rustic-wooden-table.jpg?s=612x612&w=0&k=20&c=15wnishfgfmfC4nFeKtI8NXVh5sm57BVVnOlAv31ttY=" alt="Protein Rich Diet">
+        <h3>Protein Rich Diet</h3>
+        <p>Perfect for muscle recovery & strength. Includes eggs, chicken, pulses, nuts, and whey protein.</p>
+      </div>
+      <div class="diet-card">
+        <img src="https://media.istockphoto.com/id/873937380/photo/young-girl-eating-a-oatmeal-with-berries-after-a-workout-fitness-and-healthy-lifestyle-concept.jpg?s=612x612&w=0&k=20&c=1-qwo3PD56a2yOgOlAVeWkroWu_CF3AfYuxHYjZhO6E=" alt="Balanced Meals">
+        <h3>Balanced Athlete Meal</h3>
+        <p>Combines carbs, fats, proteins, and fibers to maintain all-round nutrition throughout the day.</p>
+      </div>
+      <div class="diet-card">
+        <img src="https://cdn.create.vista.com/api/media/small/168759928/stock-photo-man-with-skipping-rope-drinking-water" alt="Hydration">
+        <h3>Hydration Focus</h3>
+        <p>Emphasizes proper water intake, electrolytes, and fresh juices to stay energized & hydrated.</p>
+      </div>
+      <div class="diet-card">
+        <img src="https://media.gettyimages.com/id/1469498128/photo/middle-aged-man-warming-up-before-running.jpg?s=612x612&w=0&k=20&c=EvTnIRJcR5D8EotxSJBk8DeeugtJoOygWvVC3MjvS00=" alt="Pre/Post Workout">
+        <h3>Pre & Post Workout</h3>
+        <p>Best for performance boost and recovery. Includes banana, peanut butter, oats, and protein bars.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Athlete India | Eat Healthy. Stay Strong. Perform Better 💪</p>
+  </footer>
+</body>
+</html>
