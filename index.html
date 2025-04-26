@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Athlete India | SportCentral</title>
+  <link rel="stylesheet" href="styles.css" />
+
+ <!-- Firebase App (core) SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+
+<!-- Firebase Auth SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="data:image/jpeg;base64,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" alt="Logo" class="logo-img" height="23" width="13">
+      <div class="logo">ATHLETE INDIA</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content-wrapper">
+      <div class="hero-content">
+        <h1>REVOLUTIONIZING THE INDIAN SPORTING INDUSTRY: A CENTRALIZED PLATFORM</h1>
+        <p>The Indian sporting industry has seen significant growth in recent years, with increasing participation and interest in various sports. However, the management of athletes remains fragmented and inefficient.</p>
+        <button id="google-btn" class="btn-orange">Sign in with Google</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>We aim to provide an all-in-one platform to manage athlete data, performance, stats, and streamline communication between coaches and players.</p>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="product-section">
+    <h2>Our Products</h2>
+    <div class="product-cards">
+      <a href="Performance.html" class="product-card">Athlete Performance Tracker</a>
+      <a href="scheduling.html" class="product-card">Scheduling & Training</a>
+      <a href="diet.html" class="product-card">Diet & Nutrition</a>
+      <a href="career-mang.html" class="product-card">Career Management</a>
+      
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <h2 class="section-title">Features</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Live Statistics</h3>
+        <p>Track performance in real-time.</p>
+        <a href="live-statistics.html" class="feature-link">Explore →</a>
+      </div>
+      <div class="feature-box">
+        <i class="fa-solid fa-user"></i>
+        <h3>Player Profiles</h3>
+        <p>Maintain athlete history and achievements.</p>
+        <a href="player-profiles.html" class="feature-link">Explore →</a>
+      </div>
+      <div class="feature-box">
+        <i class="fa-solid fa-kit-medical"></i>
+        <h3>Injury Management</h3>
+        <p>Stay on top of athlete health.</p>
+        <a href="Injury Management.html" class="feature-link">Explore →</a>
+      </div>
+      <div class="feature-box">
+        <i class="fa-solid fa-database"></i>
+        <h3>Centralized Data</h3>
+        <p>All important data in one place.</p>
+        <a href="Centralized Data.html" class="feature-link">Explore →</a>
+      </div>
+    </div>
+    
+
+
+
+
+  </section>
+  
+
+  <!-- Contact -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Feel free to contact!</h2>
+        <p>To help you contact the right department for your query we’ve put it all in one central place for you</p>
+        <iframe src="https://www.google.com/maps/embed?...your_map_code..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="contact-form">
+        <h2>Submit To Learn More.</h2>
+        <form>
+          <div class="form-row">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+          </div>
+          <div class="form-row">
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone" required>
+          </div>
+          <textarea placeholder="Message goes here" rows="5" required></textarea>
+          <button type="submit" class="send-btn"><span class="arrow">→</span> <span>Send Message</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>How do I register as an athlete?</summary>
+      <p>Click on the Explore Now button and sign up using your credentials.</p>
+    </details>
+    <details>
+      <summary>Is this platform free?</summary>
+      <p>Yes, basic features are free with options for premium upgrades.</p>
+    </details>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Athlete India. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase Setup Script -->
+  <script type="module">
+    // Import the functions you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+  
+    // Your Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBgxy-Ouc_Jn_ouyosPeATREFnv4nhm5NI",
+  authDomain: "athelet-india.firebaseapp.com",
+  projectId: "athelet-india",
+  storageBucket: "athelet-india.firebasestorage.app",
+  messagingSenderId: "356123250333",
+  appId: "1:356123250333:web:3cbfe4305f950aeec9ce74",
+  measurementId: "G-Z2J5STYY3P"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+  
+    // Login button action
+    document.getElementById("google-btn").addEventListener("click", () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // Redirect to dashboard
+          window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+          alert("Login failed: " + error.message);
+          console.error(error);
+        });
+    });
+  </script>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

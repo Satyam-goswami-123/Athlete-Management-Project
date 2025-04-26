@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injury Management</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="injury-section">
+        <h1 class="section-heading">Injury Management for Athletes</h1>
+        
+        <div class="injury-cards-container">
+
+            <!-- Card 1 -->
+            <div class="injury-card">
+                <div class="icon-container">
+                    <img src="data:image/png;base64,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" alt="First Aid">
+
+                </div>
+                <h3>Immediate First Aid (R.I.C.E)</h3>
+                <p><strong>Rest:</strong> Stop using the injured area immediately.<br>
+                   <strong>Ice:</strong> Apply ice to reduce swelling.<br>
+                   <strong>Compression:</strong> Wrap the area with a bandage.<br>
+                   <strong>Elevation:</strong> Raise the injured area above heart level.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="injury-card">
+                <div class="icon-container">
+                    <img src="data:image/png;base64,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" alt="Doctor">
+                </div>
+                <h3>Medical Diagnosis</h3>
+                <p>Consult a sports physician for accurate diagnosis and treatment options.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="injury-card">
+                <div class="icon-container">
+                    <img src="https://img.icons8.com/ios/50/000000/recovery.png" alt="Recovery">
+                </div>
+                <h3>Physical Therapy & Rehab</h3>
+                <p>Engage in a structured rehabilitation program to regain strength and mobility.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="injury-card">
+                <div class="icon-container">
+                    <img src="https://img.icons8.com/ios/50/000000/mental-health.png" alt="Mental Health">
+                </div>
+                <h3>Mental Recovery</h3>
+                <p>Stay positive during recovery and seek counseling if needed to cope with stress and emotional challenges.</p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="injury-card">
+                <div class="icon-container">
+                    <img src="https://img.icons8.com/ios/50/000000/food.png" alt="Nutrition">
+                </div>
+                <h3>Nutrition for Recovery</h3>
+                <p>Eat a balanced diet rich in proteins, vitamins, and minerals to speed up recovery.</p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="injury-card">
+                <div class="icon-container">
+                    <img src="https://img.icons8.com/ios/50/000000/medal.png" alt="Prevention">
+                </div>
+                <h3>Prevent Future Injuries</h3>
+                <p>Implement a routine of warm-ups, stretching, and strength training to reduce the risk of future injuries.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

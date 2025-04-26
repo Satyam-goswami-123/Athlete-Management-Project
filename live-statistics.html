@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Statistics</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>LIVE ATHLETE STATUS</h1>
+  </header>
+  <section id="live-statistics" class="section">
+    <div class="container">
+      <h1 class="section-title">Live Athlete Statistics</h1>
+      
+      <div class="stats-grid">
+        
+        <div class="stat-card">
+          <div class="stat-content">
+            <h2>Speed</h2>
+            <p id="speed" class="stat-value">0 km/h</p>
+          </div>
+        </div>
+  
+        <div class="stat-card">
+          <div class="stat-content">
+            <h2>Heart Rate</h2>
+            <p id="heartRate" class="stat-value">0 bpm</p>
+          </div>
+        </div>
+  
+        <div class="stat-card">
+          <div class="stat-content">
+            <h2>Calories Burned</h2>
+            <p id="calories" class="stat-value">0 kcal</p>
+          </div>
+        </div>
+  
+        <div class="stat-card">
+          <div class="stat-content">
+            <h2>Distance</h2>
+            <p id="distance" class="stat-value">0 m</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+    <script>
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+  
+      function updateStats() {
+        document.getElementById('speed').innerText = getRandom(18, 40) + " km/h";
+        document.getElementById('heartRate').innerText = getRandom(60, 180) + " bpm";
+        document.getElementById('calories').innerText = getRandom(150, 1000) + " kcal";
+        document.getElementById('distance').innerText = getRandom(0, 8000) + " m";
+      }
+  
+      setInterval(updateStats, 1500); // Update every 1.5 seconds
+    </script>
+  </section>
+  
