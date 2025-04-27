@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // Highlight current section in nav (optional)
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
@@ -19,9 +19,7 @@ window.addEventListener('scroll', () => {
       }
     });
   });
-  
-=======
-// Highlight current section in nav (optional)
+  // Highlight current section in nav (optional)
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -42,4 +40,4 @@ window.addEventListener('scroll', () => {
     });
   });
   
->>>>>>> eef01565bf89fa63051afc5e6c508ae40cbcf9d7
+
