@@ -22,7 +22,10 @@
         .then((result) => {
           alert("Welcome " + result.user.displayName);
           // ✅ Redirect after successful login
-         window.location.href = "index.html";  // Make sure this file exists!
+        setTimeout(() => {
+  window.location.href = "index.html";
+}, 2000);  // Wait for 2 seconds before redirecting
+  // Make sure this file exists!
         })
         .catch((error) => {
           console.error(error);
